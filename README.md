@@ -28,7 +28,7 @@ Runs routing + MAI scoring + Outputs Geopackages and stats.
    - OSM network (https://www.geofabrik.de)
    - GTFS feed for the city
    - Elevation raster (DEM), optional but recommended
-4. Run NetAScore for the selected city - run offician instructions: https://github.com/plus-mobilitylab/netascore?tab=readme-ov-file
+4. Run NetAScore for the selected city - run offician instructions: https://github.com/plus-mobilitylab
 5. Run 3 Python preprocessing scripts:
    - hex grid creation
    - POIS extraction 
