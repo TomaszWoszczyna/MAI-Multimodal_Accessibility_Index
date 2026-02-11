@@ -7,7 +7,7 @@ Code repository for MAI - Multimodal Accessibility Index
 - `scripts/hex_creation.py`
 creates Origin hex polygons + centroids from OSM/Overpass.
 
-- `scripts/POIs_hex.py`
+- `scripts/poi_hex.py`
 retrieves POIs from OSM using Overpass Api and saves them into hexes.
 
 - `scripts/lts_netascore_creation.py`
