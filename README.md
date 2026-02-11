@@ -62,7 +62,7 @@ Runs routing + MAI scoring + Outputs Geopackages and stats.
 - data.table
 - dplyr
 
-##2) Input data structure
+## 2) Input data structure
    Create a folder and put following data inside:
    - OSM.pbf - OSM extract for the routing engine (r5r)
    - GTFS.zip - required by r5r
@@ -73,27 +73,33 @@ Runs routing + MAI scoring + Outputs Geopackages and stats.
    - hex_poi_centroids.gpkg
    - DEM.tif
 
-##3) Step-by-step: run the pipeline
+## 3) Step-by-step: run the pipeline
 1. Pick a city (e.g., `Salzburg`, `Cracow` etc.) and download **OSM.pbf** network
 2. Download a **GTFS.zip** for the selected city.
 3. Download an **elevation raster** for the selected city (I used a 5m DEM)
 4. Run **NetAScore** for your selected city, instructions here: https://github.com/plus-mobilitylab/netascore?tab=readme-ov-file
 5. Run the provided **3 python scripts**.
-6. Open mai_pipeline.R and follow the instructions there.
+6. Open **mai_pipeline.R** and follow the instructions there.
 
-##3.1) User parameters for mai_pipeline.R
-- T = time threshold, time limit for travel
-- dep_time = departure datetime (must match GTFS service)
-- k_nearest = how many closest destinations are used for calculating medan duration
-- crs_metric - must be a projected CRS in meters, selected for a specified area of interest
+# 3.1) User parameters for mai_pipeline.R
+- `T` = time threshold, time limit for travel
+- `dep_time` = departure datetime (must match GTFS service)
+- `k_nearest` = how many closest destinations are used for calculating medan duration
+- `crs_metric` - must be a projected CRS in meters, selected for a specified area of interest
 
-##4) Outputs
+## 4) Outputs
 The R script writes to the path specified at the beginning of the script (data_path)
-- Main MAI layer - mai.constrained.gpkg
-- Constrained vs unconstrained comparison - mai_comparison_const_unconstr.gpkg
-- Route comparison - route_comparison_sameOD.gpkg
-- spatial statistics for ΔMAI - delta_mai_hotspots.gpkg
-- text log of statistical tests - mai_statistics_output.txt
+- `mai.constrained.gpkg` - main MAI layer 
+- `mai_comparison_const_unconstr.gpkg` - constrained vs unconstrained comparison 
+- `route_comparison_sameOD.gpkg` - route comparison
+- `delta_mai_hotspots.gpkg` - spatial statistics for ΔMAI 
+- `mai_statistics_output.txt` - text log of statistical tests 
+  
+## 5) Credits
+- OpenStreetMap: https://www.openstreetmap.org/
+- Overpass Api: https://overpass-turbo.eu/index.html
+- NetAScore: https://github.com/plus-mobilitylab/netascore
+- r5r: https://ipeagit.github.io/r5r/
 
 
 
