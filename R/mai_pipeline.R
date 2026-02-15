@@ -985,7 +985,7 @@ ggplot(mai_compare_complete, aes(x = mai_diff)) +
   ) +
   theme_minimal()
 
-# Optional export of comparison for QGIS (visualisation only; ok to fill NAs here)
+
 mai_compare_geom <- hex_polygons %>%
   left_join(mai_compare, by = "id") %>%
   mutate(
@@ -1002,7 +1002,7 @@ st_write(
 )
 
 # =============================================================
-# 9. H2 – ΔMAI spatial clustering + systematic differences (ROBUST)
+# 9. H2 – ΔMAI spatial clustering + systematic differences 
 # =============================================================
 
 cat("-------------------------------------------------------------\n")
@@ -1069,7 +1069,7 @@ print(moran_delta)
 cat("\n")
 
 # -----------------------------
-# 9.7) Local Getis-Ord Gi* on z-standardised ΔMAI (NO FDR)
+# 9.7) Local Getis-Ord Gi* on z-standardised ΔMAI
 # -----------------------------
 x  <- delta_cc$delta_mai
 sx <- sd(x, na.rm = TRUE)
@@ -1171,7 +1171,7 @@ if (exists("pt_scores")) {
 }
 
 # -----------------------------
-# 9.10) Join results back to FULL grid + export for QGIS (NO FDR)
+# 9.10) Join results back to FULL grid + export
 # -----------------------------
 delta_sf_proj_out <- delta_sf_proj %>%
   left_join(
