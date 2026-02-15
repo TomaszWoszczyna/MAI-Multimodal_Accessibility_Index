@@ -1,6 +1,5 @@
 # =============================================================
 # Infrastructure-Aware Multimodal Accessibility (MAI) Pipeline
-#   City: Salzburg
 # =============================================================
 
 # --- LIBRARIES ---
